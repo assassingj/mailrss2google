@@ -12,8 +12,9 @@ If you just want list them, all you need to do is typing these words into your t
 find ~/Library/Mail/V2/RSS/ -name "Info.plist" |xargs -I{}  grep -A 1 Feed {} | grep string | awk -F'[<>]' '{print $3}'
 </code>
 
-But if you need subscribe them to google reader, you may need do this:
+But if you need to subscribe them to google reader, you sould do this:
 <code>
 python rsstransfer.py your_google_email
 </code>
+
 and input your password.
