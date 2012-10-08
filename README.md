@@ -7,9 +7,15 @@ Find all rss feeds in mac mail and  subscribe them to google reader.
 
 So you may need get all your collected feeds or transfer them to google reader via some tools if you have upgraded to mountain lion.
 
+If you just want list them, all you need to do is typing these words into your terminal and execute it:
+<code>
+find ~/Library/Mail/V2/RSS/ -name "Info.plist" |xargs -I{}  grep -A 1 Feed {} | grep string | awk -F'[<>]' '{print $3}'
+</code>
+
+if you need subscribe them to google reader, you may need do this:
 usage:
 <code>
-	python rsstransfer.py your_google_email
+python rsstransfer.py your_google_email
 </code>
 
 then input your password.
